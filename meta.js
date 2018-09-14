@@ -19,7 +19,7 @@ module.exports = {
     before: addTestAnswers
   },
   helpers: {
-    if_or(v1, v2, options) {
+    if_or (v1, v2, options) {
 
       if (v1 || v2) {
         return options.fn(this)
@@ -27,11 +27,11 @@ module.exports = {
 
       return options.inverse(this)
     },
-    template_version() {
+    template_version () {
       return templateVersion
     },
   },
-  
+
   prompts: {
     name: {
       when: 'isNotTest',
@@ -74,6 +74,10 @@ module.exports = {
       type: 'confirm',
       message: 'Install vue-router?',
     },
+    vuex: {
+      "type": "confirm",
+      "message": "Install vuex?"
+    },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
@@ -105,6 +109,7 @@ module.exports = {
       when: 'isNotTest',
       type: 'confirm',
       message: 'Set up unit tests',
+      default: false
     },
     runner: {
       when: 'isNotTest && unit',
@@ -132,6 +137,7 @@ module.exports = {
       when: 'isNotTest',
       type: 'confirm',
       message: 'Setup e2e tests with Nightwatch?',
+      default: false
     },
     autoInstall: {
       when: 'isNotTest',
@@ -139,6 +145,11 @@ module.exports = {
       message:
         'Should we run `npm install` for you after the project has been created? (recommended)',
       choices: [
+        {
+          name: 'No, I will handle that myself',
+          value: false,
+          short: 'no',
+        },
         {
           name: 'Yes, use TNPM',
           value: 'tnpm',
@@ -153,12 +164,7 @@ module.exports = {
           name: 'Yes, use Yarn',
           value: 'yarn',
           short: 'yarn',
-        },
-        {
-          name: 'No, I will handle that myself',
-          value: false,
-          short: 'no',
-        },
+        }
       ],
     },
   },
@@ -175,8 +181,9 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
+    "src/store/**/*": "vuex",
   },
-  complete: function(data, { chalk }) {
+  complete: function (data, { chalk }) {
     const green = chalk.green
 
     sortDependencies(data, green)

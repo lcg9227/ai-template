@@ -27,7 +27,8 @@
   "dependencies": {
     "ai-sdk": "^1.0.0",
     "vue": "^2.5.2"{{#router}},
-    "vue-router": "^3.0.1"{{/router}}
+    "vue-router": "^3.0.1"{{/router}}{{#vuex}},
+    "vuex": "^3.0.1"{{/vuex}}
   },
   "devDependencies": {
     {{#lint}}
