@@ -43,6 +43,7 @@ module.exports = {
   {{/if_eq}}
   // add your custom rules here
   rules: {
+    'no-undef': 'off',
     {{#if_eq lintConfig "standard"}}
     // allow async-await
     'generator-star-spacing': 'off',
