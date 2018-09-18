@@ -9,11 +9,13 @@
       \{{item.name}}
     </div>
     <span v-for="(v, i) in object" :key="i">\{{v}}-</span>
-    <div v-on:click="btnClick" class="click">点击事件</div>
+    <div>
+    <el-button v-on:click="btnClick" class="click">点击事件</el-button>
+    </div>
     <p class="total">合计：<span>\{{total}}</span></p>
     <p>计算属性的now：\{{nowComputed}}</p>
     <p>方法调用的now: \{{nowMethods()}}</p>
-    <p>vuex状态:\{{count}}</p>
+    <p>vuex全局状态:\{{count}}</p>
   </div>
 </template>
 
@@ -92,6 +94,6 @@ a {
   }
 }
 .click {
-  cursor: pointer
+  cursor: pointer;
 }
 </style>

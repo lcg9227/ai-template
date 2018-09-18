@@ -1,22 +1,26 @@
 <template>
-  <div class="hello">
-    <test />
+  <div id="main">
     <h1>\{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <test />
+    <el-button type="primary" v-on:click="goDetail">进入detail页面</el-button>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import test from './test/test.vue'
-
+import test from './components/test'
 export default {
-  name: 'HelloWorld',
+  name: 'Main',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '李传格测试'
     }
   },
-  components: { test }
+  components: { test },
+  methods: {
+    goDetail () {
+      this.$router.push('/detail')
+    }
+  }
 }
 </script>
 
