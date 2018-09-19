@@ -2,7 +2,7 @@
   <div class="radio">
     <div class="radio-warp">
     <el-radio-group v-model="radio1" @change="radio1change">
-      <el-radio-button v-for="item in radioItems" :label="item.id" :key="item.id">{{item.name}}</el-radio-button>
+      <el-radio-button v-for="item in radioItems" :label="item.id" :key="item.id">\{{item.name}}</el-radio-button>
     </el-radio-group>
     </div>
     <div class="radio-warp">

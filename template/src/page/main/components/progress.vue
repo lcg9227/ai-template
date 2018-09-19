@@ -14,7 +14,7 @@
       <el-progress :text-inside="true" :stroke-width="18" :percentage="100" status="success"></el-progress>
       <el-progress :text-inside="true" :stroke-width="18" :percentage="50" status="exception"></el-progress>
     </div>
-    <div class="progress-warp">
+    <div class="progress-warp progress-warp-center">
       <el-progress type="circle" :percentage="80" color="#8e71c7"></el-progress>
       <el-progress type="circle" :percentage="100" status="success"></el-progress>
     </div>
@@ -36,6 +36,9 @@ export default {
   text-align: left;
   .progress-warp {
     padding: 0 10px 20px;
+  }
+  .progress-warp-center {
+    text-align: center;
   }
 }
 </style>
