@@ -19,6 +19,8 @@ export default {
     openVn () {
       const h = this.$createElement
       this.$message({
+        duration: 2000,
+        showClose: true,
         type: 'error',
         message: h('p', null, [
           h('span', null, '类型：错误,内容是 '),
@@ -28,6 +30,8 @@ export default {
     },
     openHtml () {
       this.$message({
+        duration: 2000,
+        showClose: true,
         type: 'warning',
         dangerouslyUseHTMLString: true,
         message: '<strong>这是 <i>HTML</i> 片段,类型：告警</strong>'
