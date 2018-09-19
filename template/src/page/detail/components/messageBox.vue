@@ -12,7 +12,6 @@ export default {
   methods: {
     open () {
       this.$alert('这是一段内容', '标题名称', {
-        customClass: 'message-box',
         confirmButtonText: '确定',
         callback: action => {
           this.$message({
@@ -59,7 +58,11 @@ export default {
     },
     open4 () {
       this.$alert('<strong style="color: red;">这是 <i>HTML</i> 片段</strong>', 'HTML 片段', {
-        dangerouslyUseHTMLString: true
+        dangerouslyUseHTMLString: true,
+        confirmButtonText: '确定',
+        cancelButtonText: '取消'
+      }).catch(() => {
+        console.log('取消')
       })
     }
   }
