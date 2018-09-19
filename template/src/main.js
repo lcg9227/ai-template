@@ -3,7 +3,7 @@
 import 'ai-sdk'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { Autocomplete, Switch, Button, ButtonGroup, Radio, RadioGroup, RadioButton, Slider, Checkbox, CheckboxButton, CheckboxGroup, MessageBox, Message } from 'element-ui'
+import { Autocomplete, Switch, Button, ButtonGroup, Radio, RadioGroup, RadioButton, Slider, Checkbox, CheckboxButton, CheckboxGroup, MessageBox, Message, Progress } from 'element-ui'
 import App from './App'
 import router from './router'
 import store from './store'
@@ -23,6 +23,7 @@ Vue.use(RadioGroup)
 Vue.use(Checkbox)
 Vue.use(CheckboxButton)
 Vue.use(CheckboxGroup)
+Vue.use(Progress)
 
 Vue.prototype.$msgbox = MessageBox
 Vue.prototype.$alert = MessageBox.alert

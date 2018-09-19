@@ -1,10 +1,11 @@
 <template>
   <div class="main">
     <div class="title">demo</div>
-    <Slider />
     <Radio />
     <Checkbox />
     <SwitchItem />
+    <Slider />
+    <Progress />
     <Button />
   </div>
 </template>
@@ -15,10 +16,11 @@ import Checkbox from './components/checkbox.vue'
 import Slider from './components/slider.vue'
 import SwitchItem from './components/switch.vue'
 import Button from './components/button.vue'
+import Progress from './components/progress.vue'
 
 export default {
   name: 'Main',
-  components: { Radio, Checkbox, Slider, SwitchItem, Button }
+  components: { Radio, Checkbox, Slider, SwitchItem, Button, Progress }
 }
 </script>
 
