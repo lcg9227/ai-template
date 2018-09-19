@@ -1,41 +1,39 @@
 <template>
-  <div id="main">
-    <h1>\{{ msg }}</h1>
-    <el-button type="primary" v-on:click="backMain">返回主页面</el-button>
+  <div class="detail">
+    <div class="title">page2</div>
+    <Message />
+    <MessageBox />
+    <Foot />
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+import Foot from './components/foot'
+import Message from './components/message'
+import MessageBox from './components/messageBox'
+
 export default {
   name: 'Main',
   data () {
     return {
-      msg: '这里是detail页面'
     }
   },
+  components: { Foot, Message, MessageBox },
   methods: {
-    backMain () {
-      this.$router.go(-1)
-    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+<style lang="scss" type="text/css"  scoped>
+.detail {
+  text-align: center;
+  padding-bottom: 60px;
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 0;
+  }
 }
 </style>

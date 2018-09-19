@@ -1,44 +1,36 @@
 <template>
-  <div id="main">
-    <h1>\{{ msg }}</h1>
-    <test />
-    <el-button type="primary" v-on:click="goDetail">进入detail页面</el-button>
+  <div class="main">
+    <div class="title">demo</div>
+    <Slider />
+    <Radio />
+    <Checkbox />
+    <SwitchItem />
+    <Button />
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import test from './components/test'
+import Radio from './components/radio.vue'
+import Checkbox from './components/checkbox.vue'
+import Slider from './components/slider.vue'
+import SwitchItem from './components/switch.vue'
+import Button from './components/button.vue'
+
 export default {
   name: 'Main',
-  data () {
-    return {
-      msg: '李传格测试'
-    }
-  },
-  components: { test },
-  methods: {
-    goDetail () {
-      this.$router.push('/detail')
-    }
-  }
+  components: { Radio, Checkbox, Slider, SwitchItem, Button }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.main {
+  padding-bottom: 60px;
 }
 </style>

@@ -3,14 +3,33 @@
 import 'ai-sdk'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import ElementUI from 'element-ui'
+import { Autocomplete, Switch, Button, ButtonGroup, Radio, RadioGroup, RadioButton, Slider, Checkbox, CheckboxButton, CheckboxGroup, MessageBox, Message } from 'element-ui'
 import App from './App'
 import router from './router'
 import store from './store'
 import 'element-ui/lib/theme-chalk/index.css'
 import './element-variables.scss'
 
-Vue.use(ElementUI, { size: 'mini', zIndex: 3000 })
+Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }
+
+Vue.use(Autocomplete)
+Vue.use(Switch)
+Vue.use(Button)
+Vue.use(ButtonGroup)
+Vue.use(Slider)
+Vue.use(Radio)
+Vue.use(RadioButton)
+Vue.use(RadioGroup)
+Vue.use(Checkbox)
+Vue.use(CheckboxButton)
+Vue.use(CheckboxGroup)
+
+Vue.prototype.$msgbox = MessageBox
+Vue.prototype.$alert = MessageBox.alert
+Vue.prototype.$confirm = MessageBox.confirm
+Vue.prototype.$prompt = MessageBox.prompt
+Vue.prototype.$message = Message
+
 Vue.use(Vuex)
 Vue.config.productionTip = false
 
