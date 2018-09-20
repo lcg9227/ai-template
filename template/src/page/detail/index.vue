@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <div class="title">page2</div>
+    <div class="title">弹窗示例</div>
     <Message />
     <MessageBox />
     <Foot />
@@ -18,9 +18,7 @@ export default {
     return {
     }
   },
-  components: { Foot, Message, MessageBox },
-  methods: {
-  }
+  components: { Foot, Message, MessageBox }
 }
 </script>
 

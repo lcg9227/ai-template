@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/page/main'
 import Detail from '@/page/detail'
+import Test from '@/page/test'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/detail',
       name: 'Detail',
       component: Detail
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      component: Test
     }
   ]
 })

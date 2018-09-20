@@ -1,8 +1,7 @@
 <template>
   <div class="block">
     <div class="button-warp">
-      <el-button type="primary" @click="backMain">返回主页面</el-button>
-      <el-button type="primary" @click="goRequestTest">下一页</el-button>
+      <el-button type="primary" @click="backMain">上一页</el-button>
     </div>
   </div>
 </template>
@@ -12,9 +11,6 @@ export default {
   methods: {
     backMain () {
       this.$router.go(-1)
-    },
-    goRequestTest () {
-      this.$router.push('/test')
     }
   }
 }
@@ -35,7 +31,7 @@ export default {
   z-index: 10;
   .button-warp {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     padding: 0 10px;
   }
