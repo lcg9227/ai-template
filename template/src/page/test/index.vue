@@ -49,6 +49,7 @@ export default {
       })
     },
     btnClick3 () {
+      console.log('count异步加10,等待1秒')
       this.$store.dispatch('mockRequest')
     },
     btnClick4 () {

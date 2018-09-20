@@ -51,7 +51,6 @@ export default new Vuex.Store({
       }, 2000)
     },
     mockRequest ({ commit }) {
-      console.log(this)
       mockRequestData((val) => {
         commit('mockRequest', { val })
       })
