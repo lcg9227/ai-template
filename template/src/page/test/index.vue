@@ -38,6 +38,7 @@ export default {
       this.$store.commit('increment')
     },
     btnClick2 () {
+      console.log('count异步倍增,等待1秒')
       this.$store.dispatch('multiple', {
         n: 2,
         scb: () => {
