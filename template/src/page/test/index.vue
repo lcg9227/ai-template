@@ -1,8 +1,8 @@
 <template>
   <div class="test">
     <div class="title">模拟接口调用示例</div>
-    <div>
-      <el-button type="primary" v-for="(item,i) in btns" :key="i" @click="mapMethods(item)">\{{item.text}}</el-button>
+    <div class="btn" v-for="(item,i) in btns" :key="i">
+      <el-button type="primary" @click="mapMethods(item)" >\{{item.text}}</el-button>
     </div>
     <p>vuex count状态:\{{count}}</p>
     <Foot />
@@ -67,6 +67,9 @@ export default {
     font-size: 24px;
     font-weight: bold;
     padding: 10px 0;
+  }
+  .btn {
+    margin: 10px;
   }
 }
 </style>
