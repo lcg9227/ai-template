@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="warp">
     <el-button :plain="true" @click="open">打开消息提示</el-button>
     <el-button :plain="true" @click="openVn">VNode</el-button>
     <el-button :plain="true" @click="openHtml">html</el-button>
@@ -43,12 +43,13 @@ export default {
 <!--message样式可以写在全局；若写在组件内，不要加scoped -->
 <style lang="scss" type="text/css">
 .el-message {
-  min-width: 90%;
+  min-width: 80% !important;
 }
 </style>
 <!-- 组件内的样式 -->
 <style lang="scss" type="text/css" scoped>
-.wrap {
+.warp {
   padding: 0 10px 20px;
+  text-align: center;
 }
 </style>

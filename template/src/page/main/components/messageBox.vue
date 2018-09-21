@@ -71,12 +71,13 @@ export default {
 <!--message样式可以写在全局；若写在组件内，不要加scoped -->
 <style lang="scss" type="text/css">
 .el-message-box {
-  width: 90%;
+  width: 80% !important;
 }
 </style>
 <!-- 组件内的样式 -->
 <style lang="scss" type="text/css" scoped>
 .wrap {
   padding: 0 10px 20px;
+  text-align: center;
 }
 </style>

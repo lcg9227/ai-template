@@ -15,7 +15,7 @@
 export default {
   methods: {
     butClick () {
-      this.$router.push('/detail')
+      this.$router.push('/test')
     }
   }
 }

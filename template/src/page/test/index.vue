@@ -1,8 +1,17 @@
 <template>
   <div class="test">
-    <div class="title">模拟接口调用示例</div>
-    <div class="btn" v-for="(item,i) in btns" :key="i">
-      <el-button type="primary" @click="mapMethods(item)" >\{{item.text}}</el-button>
+    <div class="title">异步调用示例</div>
+    <div class="btn">
+      <el-button type="primary" @click="btnClick" >count自增</el-button>
+    </div>
+    <div class="btn">
+      <el-button type="primary" @click="btnClick" >active调用，异步倍增</el-button>
+    </div>
+    <div class="btn">
+      <el-button type="primary" @click="btnClick" >active调用，count异步加10</el-button>
+    </div>
+    <div class="btn">
+      <el-button type="primary" @click="btnClick" >active调用，同步方法示例</el-button>
     </div>
     <p>vuex count状态:\{{count}}</p>
     <Foot />
@@ -15,12 +24,6 @@ export default {
   name: 'test',
   data () { // 属性
     return {
-      btns: [
-        { methodsName: 'btnClick4', text: 'active调用，同步方法示例' },
-        { methodsName: 'btnClick3', text: 'active调用，count异步加10' },
-        { methodsName: 'btnClick2', text: 'active调用，异步倍增' },
-        { methodsName: 'btnClick', text: 'count自增' }
-      ]
     }
   },
   components: { Foot },
