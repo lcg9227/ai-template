@@ -3,12 +3,12 @@
 import 'ai-sdk'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { Autocomplete, Switch, Button, ButtonGroup, Radio, RadioGroup, RadioButton, Slider, Checkbox, CheckboxButton, CheckboxGroup, MessageBox, Message, Progress } from 'element-ui'
+import { Autocomplete, Switch, Button, ButtonGroup, Radio, RadioGroup, RadioButton, Slider, Checkbox, CheckboxButton, CheckboxGroup, MessageBox, Message, Progress } from 'genie-ui'
 import App from './App'
 import router from './router'
 import store from './store'
-import 'element-ui/lib/theme-chalk/index.css'
 import './element-variables.scss'
+import mock from './common/mock'
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }
 
@@ -33,6 +33,11 @@ Vue.prototype.$message = Message
 
 Vue.use(Vuex)
 Vue.config.productionTip = false
+
+/* mock */
+if (mock.open) {
+  mock.mockSDK()
+}
 
 /* eslint-disable no-new */
 new Vue({
