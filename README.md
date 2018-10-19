@@ -16,7 +16,7 @@ $ npm install -g vue-cli
 ## 拉取模版生成demo
 
 ```
-$ vue init aligenie-iot-team/genie-iot-cli my-project
+$ vue init lcg9227/ai-template my-project
 $ cd my-project
 // 安装依赖可以用tnpm install会快一些
 $ npm install
