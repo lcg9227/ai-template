@@ -2,27 +2,15 @@
   <div class="main">
     <div class="title">demo</div>
     <SwitchItem />
-    <SwitchItem2 />
-    <div class="box">
-      <el-slider
-        :value="10"
-        :min="5"
-        :max="25"
-        :step="5"
-        show-stops
-        show-numerial>
-      </el-slider>
-    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import SwitchItem from './components/switch.vue'
-import SwitchItem2 from './components/switch2.vue'
 
 export default {
   name: 'Main',
-  components: { SwitchItem, SwitchItem2 }
+  components: { SwitchItem }
 }
 </script>
 

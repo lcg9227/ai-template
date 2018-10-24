@@ -17,12 +17,12 @@ export default new Vuex.Store({
      */
     updateDeviceStatus(state, payload) {
       const { data, cb } = payload
-      const { status, attr, errorInfo } = data
+      const { status, attr = {}, errorInfo } = data
       if (!status) {
         console.log('error')
       }
       state.status = status
-      state.attr = Object.assign({}, state.attr, attr || {})
+      state.attr = Object.assign({}, state.attr, attr)
       state.errorInfo = errorInfo || {}
       state.scheduleInfo = errorInfo || {}
       cb && cb()
@@ -31,54 +31,40 @@ export default new Vuex.Store({
      * 更新状态树中的属性集合
      * @param {*} attr 要更新的属性集合
      */
-    updateStatus(state, attr) {
+    updateDeviceAttrs(state, attr = {}) {
       state.attr = Object.assign({}, state.attr, attr)
     }
   },
-  actions: {// 可异步
+  actions: {
     /**
      * 获取设备状态 todo: 目前只是mock，后续根据具体情况调整逻辑
      * @param {*} payload 参数 cb : 回调函数
      */
     getDeviceStatus({ commit }, payload = {}) {
       const { cb = () => { } } = payload
-      AI.getDeviceStatus((data) => {
-        if (data.msgCode === 'SUCCESS') {
-          commit('updateDeviceStatus', { data: data.model, cb })
-        } else {
-          console.log('error', data)
-        }
+      const { devId } = AI
+      AI.getDeviceStatus({ devId }, (data) => {
+        commit('updateDeviceStatus', { data: data.model, cb })
+      }, (error) => {
+        console.log('error', error)
       })
     },
     /**
      * 设置设备状态  todo: 目前只是mock，后续根据具体情况调整逻辑
      * @param {*} payload  参数
-     * @param {object} payload.update 要更新的属性集合
+     * @param {object} payload.attrs 要更新的属性集合
      * @param {object} payload.immediately 是否立即更新状态树种的属性集合
      */
     setDeviceStatus({ commit }, payload = {}) {
-      const { update = {}, immediately = true } = payload
+      const { attrs = {}, immediately = true } = payload
       if (immediately) {
-        commit('updateStatus', update)
+        commit('updateDeviceAttrs', attrs)
       }
+      const { devId } = AI
       this.SET_TIMEOUT && clearTimeout(this.SET_TIMEOUT)
       this.SET_TIMEOUT = setTimeout(() => {
-        AI.setDeviceStatus(update)
+        AI.setDeviceStatus({ devId, attrs })
       }, 500)
-    },
-    /**
-     * 设备状态变化监听  todo: 目前只是mock，后续根据具体情况调整逻辑
-     * @param {*} payload 参数 cb : 回调函数
-     */
-    deviceStatusChange({ commit }, payload = {}) {
-      const { cb = () => { } } = payload
-      AI.deviceStatusChange((data) => {
-        if (data.msgCode === 'SUCCESS') {
-          commit('updateDeviceStatus', { data: data.model, cb })
-        } else {
-          console.log('error', data)
-        }
-      })
     }
   }
 })

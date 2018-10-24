@@ -8,7 +8,6 @@ import App from './App'
 import router from './router'
 import store from './store'
 import './element-variables.scss'
-import mock from './common/mock'
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }
 
@@ -34,11 +33,8 @@ Vue.prototype.$message = Message
 Vue.use(Vuex)
 Vue.config.productionTip = false
 
-/* mock */
-if (mock.open) {
-  mock.mockSDK()
-}
-
+/* 设备信息：devId */
+AI.devId = 'DEB079949E04E95A2DBDDAF8C9CAE215'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

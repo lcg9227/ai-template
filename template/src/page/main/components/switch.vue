@@ -23,7 +23,7 @@ export default {
         return Switch === 1
       },
       set: function (val) {
-        this.$store.dispatch('setDeviceStatus', { update: { Switch: val ? 1 : 0 } })
+        this.$store.dispatch('setDeviceStatus', { attrs: { Switch: val ? 1 : 0 } })
       }
     }
   }
